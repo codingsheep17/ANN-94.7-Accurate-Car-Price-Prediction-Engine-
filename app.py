@@ -19,7 +19,9 @@ st.write("Enter car details below to predict its price")
 # -------------------------------
 year = st.number_input("Year", min_value=1990, max_value=2025, value=2018)
 km_driven = st.number_input("Kilometers Driven", min_value=0, value=50000)
-owner = st.selectbox("Owner Type", [0, 1, 2, 3])
+owner_display = st.selectbox("Owner Type", ["First Owner", "Second Owner", "Third Owner", "Fourth & Above"])
+owner_map = {"First Owner": 0, "Second Owner": 1, "Third Owner": 2, "Fourth & Above": 3}
+owner = owner_map[owner_display]
 
 mileage = st.number_input("Mileage (km/l)", value=20.5)
 engine = st.number_input("Engine (CC)", value=1200)
